@@ -8,10 +8,10 @@ function Home() {
         <div className="container">
           <div className="gradient">
               <h1>
-              Home
+              CSS Logos
               </h1>
               <p>
-                Some well known corporate logos in made with CSS & HTML
+                Logos created with CSS & CSS animations
               </p>
               <div>
               <button className='btn' onClick={() => navigate('/figma')}>Start</button>
