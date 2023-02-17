@@ -7,12 +7,19 @@ function Home() {
       <div className="home">
         <div className="container">
           <div className="gradient">
-              <h1>
-              CSS Logos
-              </h1>
-              <p>
-                Logos created with CSS & CSS animations
-              </p>
+        
+              
+              <div className="logo">
+                <div className="logo-container">
+                  <div className="ch">
+                  <h2>CSS LOGOS</h2>
+                  </div>
+                  <div className="border border-top"></div>
+                  <div className="border border-right"></div>
+                  <div className="border border-bottom"></div>
+                  <div className="border border-left"></div>
+                </div>
+              </div>
               <div>
               <button className='btn' onClick={() => navigate('/figma')}>Start</button>
               </div>

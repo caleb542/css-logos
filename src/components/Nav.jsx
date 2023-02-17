@@ -1,9 +1,31 @@
+import React, { useState } from 'react'
 import {NavLink} from 'react-router-dom'
 
 function Nav() {
+    
+    const [show, setShow ] = useState(true)
+    
+    const toggle = (e) => {
+        e.preventDefault()
+        // alert('clcike')
+        setShow(!show)
+    }
     return (
-      <nav id="Nav" className="nav">
-         <ul className="navBlock">
+        <>
+        <button onClick={toggle} className="btn btnNav" >
+        <div className='dots' style={ show ? { 'rotate':'-90deg','transition':'all 0.4s'}:{'rotate':'0deg','transition':'all 0.4s'}}>
+            <div style={ show ? { 'width':'2px','transition':'all 0.4s'}:{'width':'24px',}}></div>
+            <div style={ show ? { 'width':'2px'}:{'width':'24px'}}></div><div style={ show ? { 'width':'2px'}:{'width':'24px'}}></div>
+        </div>
+      
+    </button> 
+     
+      <nav id="Nav" className={show ?'show':'hide'}>
+        
+        <ul>
+        <li>
+       
+        </li>
             <li className="navItem">
                 <NavLink to='/' activeclassname="active">Home</NavLink>
             </li>
@@ -34,8 +56,15 @@ function Nav() {
             <li className="navItem">
                 <NavLink activeclassname="active" to='android'>Android</NavLink>
             </li>
+            <li className="navItem">
+                <NavLink activeclassname="active" to='adidas'>Adidas</NavLink>
+            </li>
+            <li className="navItem">
+                <NavLink activeclassname="active" to='circles'>Flowers</NavLink>
+            </li>
          </ul>
       </nav>
+      </>
     )
   }
   

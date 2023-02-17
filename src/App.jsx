@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Figma from './pages/Figma'
@@ -9,6 +10,8 @@ import Mcdonalds from './pages/Mcdonalds'
 import Git from './pages/Git'
 import Switch from './pages/Switch'
 import Android from './pages/Android'
+import Flowers from './pages/Flowers'
+import Adidas from './pages/Adidas'
 import Nav from './components/Nav'
 
 function App() {
@@ -28,6 +31,8 @@ function App() {
             <Route path='/git' element={<Git />}></Route>
             <Route path='/switch' element={<Switch />}></Route>
             <Route path='/android' element={<Android />}></Route>
+            <Route path='/adidas' element={<Adidas />}></Route>
+            <Route path='/circles' element={<Flowers />}></Route>
           </Routes>
         </Router>
       </div>

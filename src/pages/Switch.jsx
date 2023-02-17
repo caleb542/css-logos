@@ -4,6 +4,7 @@ function Switch() {
   return (
     <div className="switch">
         <div className="container">
+            <div>
             <h1>
                 <span>NINTENDO</span>
                 <span>SWITCH</span>
@@ -15,6 +16,7 @@ function Switch() {
                 <div className="solid">
                     <div className="controller"></div>
                 </div>
+            </div>
             </div>
         </div>
     </div>
