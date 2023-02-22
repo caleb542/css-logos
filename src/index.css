@@ -124,81 +124,82 @@ nav a:hover{
   background: #fff;
   box-shadow: 0 0 3px 3px rgb(0 0 0 /25%);
 }
+
+.nextprev{
+  display:block;
+  position: absolute;
+  top:50%;
+  left:0;
+  height:3rem;;
+  width:100%;
+  z-index:10;
+}
+.next button,
+.prev button{
+  display: inline-block;
+  width:3rem;
+  height:3rem;
+  border-style: solid;
+  border-radius: 6px;
+  padding:0;
+  display: grid;
+  place-content:center;
+  font-size: 3rem;
+  color:#000;
+  background-color: #fff;
+  cursor: pointer;
+  border-color:transparent;
+  border-radius:50%;
+  box-shadow:0px 4px 12px 2px rgb(0 0 0 / 10%);
+
+
+}
+.next button:hover,
+.prev button:hover,
+.next button:focus,
+.prev button:focus{
+  color:#055;
+}
+.next button:focus,
+.prev button:focus{
+  border-color:#fff;
+}
+.next button:disabled{
+  filter:contrast(0.3);
+  opacity:0.3;
+}
+.next button:disabled:hover{
+  color:#000;
+  cursor:default;
+ opacity:0.3
+}
+
+.nextprev .buttons {
+  padding: 1rem 2rem;
+  background:transparent;
+  box-shadow: none;
+  /* background: #fff; */
+  /* box-shadow: 0 0 3px 3px rgb(0 0 0 / 25%); */
+  display: flex;
+  justify-content: space-between;
+}
+.num{
+position: absolute;
+color:#fff;
+left:50%;
+transform: translateX(-50%);
+bottom:10%;
+padding:0.5rem;
+font-family:'Poppins';
+color:#000;
+border-radius: 6px;
+background:#fff;
+box-shadow:0px 2px 12px 7px rgb(0 0 0 / 10%);
+}
 @media screen and (max-width:1155px){
   :root{
     /* --navCollapsed:40px; */
   }
-  .nextprev{
-    display:block;
-    position: absolute;
-    top:50%;
-    left:0;
-    height:3rem;;
-    width:100%;
-    z-index:10;
-  }
-  .next button,
-  .prev button{
-    display: inline-block;
-    width:3rem;
-    height:3rem;
-    border-style: solid;
-    border-radius: 6px;
-    padding:0;
-    display: grid;
-    place-content:center;
-    font-size: 3rem;
-    color:#000;
-    background-color: #fff;
-    cursor: pointer;
-    border-color:transparent;
-    border-radius:50%;
-    box-shadow:0px 4px 12px 2px rgb(0 0 0 / 10%);
-
-
-  }
-  .next button:hover,
-  .prev button:hover,
-  .next button:focus,
-  .prev button:focus{
-    color:#055;
-  }
-  .next button:focus,
-  .prev button:focus{
-    border-color:#fff;
-  }
-  .next button:disabled{
-    filter:contrast(0.3);
-    opacity:0.3;
-  }
-  .next button:disabled:hover{
-    color:#000;
-    cursor:default;
-   opacity:0.3
-  }
-  
-  .nextprev .buttons {
-    padding: 1rem 2rem;
-    background:transparent;
-    box-shadow: none;
-    /* background: #fff; */
-    /* box-shadow: 0 0 3px 3px rgb(0 0 0 / 25%); */
-    display: flex;
-    justify-content: space-between;
-}
-.num{
-  position: absolute;
-  color:#fff;
-  left:50%;
-  transform: translateX(-50%);
-  bottom:10%;
-  padding:0.5rem;
-  font-family:'Poppins';
-  color:#000;
-  border-radius: 6px;
-  background:#fff;
-  box-shadow:0px 2px 12px 7px rgb(0 0 0 / 10%);
-}
   .pageContainer{
     display:block;
   }
