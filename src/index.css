@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 :root {
   --bg:#fff;
   --navHeight:60px;
@@ -10,15 +10,36 @@
   color-scheme: light dark;
   color: #222;
   /* background-color: #fff; */
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+.tab-only{
+  opacity:0;
+  padding:1rem;
+  background-color: black;
+  color:#fff;
+  height:2rem;
+  line-height:2rem;
+  font-family: 'Poppins';
+  z-index:10;
+  position:absolute;
+  left:2rem;
+  top:2rem;
+  text-decoration: underline;
+}
+.tab-only:hover{
+  opacity:0;
+  cursor:default; 
+}
+.tab-only:focus{
+  opacity:1;
+}
 body{
   overflow:hidden;
+  font-family: Poppins;
 }
 h1 {
   text-align: center;
@@ -87,9 +108,99 @@ nav a:hover{
   border-radius:25px;
   padding:0.5rem 1.5rem;
 }
+.nextprev{
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:2rem;
+  border-radius: 6px;
+  bottom:0;
+  left:50%;
+
+}
+
+.nextprev > div{
+  padding:1rem 2rem;
+  background: #fff;
+  box-shadow: 0 0 3px 3px rgb(0 0 0 /25%);
+}
 @media screen and (max-width:1155px){
   :root{
     /* --navCollapsed:40px; */
+  }
+  .nextprev{
+    display:block;
+    position: absolute;
+    top:50%;
+    left:0;
+    height:3rem;;
+    width:100%;
+    z-index:10;
+  }
+  .next button,
+  .prev button{
+    display: inline-block;
+    width:3rem;
+    height:3rem;
+    border-style: solid;
+    border-radius: 6px;
+    padding:0;
+    display: grid;
+    place-content:center;
+    font-size: 3rem;
+    color:#000;
+    background-color: #fff;
+    cursor: pointer;
+    border-color:transparent;
+    border-radius:50%;
+    box-shadow:0px 4px 12px 2px rgb(0 0 0 / 10%);
+
+
+  }
+  .next button:hover,
+  .prev button:hover,
+  .next button:focus,
+  .prev button:focus{
+    color:#055;
+  }
+  .next button:focus,
+  .prev button:focus{
+    border-color:#fff;
+  }
+  .next button:disabled{
+    filter:contrast(0.3);
+    opacity:0.3;
+  }
+  .next button:disabled:hover{
+    color:#000;
+    cursor:default;
+   opacity:0.3
+  }
+  
+  .nextprev .buttons {
+    padding: 1rem 2rem;
+    background:transparent;
+    box-shadow: none;
+    /* background: #fff; */
+    /* box-shadow: 0 0 3px 3px rgb(0 0 0 / 25%); */
+    display: flex;
+    justify-content: space-between;
+}
+.num{
+  position: absolute;
+  color:#fff;
+  left:50%;
+  transform: translateX(-50%);
+  bottom:10%;
+  padding:0.5rem;
+  font-family:'Poppins';
+  color:#000;
+  border-radius: 6px;
+  background:#fff;
+  box-shadow:0px 2px 12px 7px rgb(0 0 0 / 10%);
+}
+  .pageContainer{
+    display:block;
   }
   nav{
     align-content:baseline;
@@ -99,7 +210,7 @@ nav a:hover{
     padding-bottom:0;
     padding-right:4rem;
     padding-left:4rem;
-    background-color: #000;
+    background-color: rgb(0 0 0 / 50%);
     transition:all ease-in 0.2s;
   }
   nav.show{
@@ -112,9 +223,13 @@ nav a:hover{
     padding-top:0;
     opacity:0.5;
   }
+  nav.hide ul li a{
+    display:none;
+  }
 
   nav li a{
     color:#fff;
+    
   }
 
 
@@ -126,10 +241,9 @@ nav a:hover{
   .dots{
     position: relative;
     display:flex;
-    padding:6px;
+    padding:0;
     flex-direction: column;
-    gap:15%;
-    height:40px;
+    height:30px;
     align-items: center;
     justify-content: space-evenly;
   }
@@ -137,7 +251,7 @@ nav a:hover{
     background:#fff;
     width:25px;
     height:2px;
-    transition:all 0.4s;
+    transition:all 0.05s;
     
   }
   nav {
@@ -206,8 +320,8 @@ nav a:hover{
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width:60px;
-  max-height:60px;
+  max-width:40px;
+  max-height:40px;
   width:60px;
   height:60px;
   padding:6px;
@@ -225,7 +339,7 @@ nav a:hover{
   width:100%;
 }
 
-.home h1 {
+.home h2 {
   color:#fff;
   font-size: 3rem;
 }
@@ -334,7 +448,14 @@ nav {
   --animation: slide-in-left 0.5s linear forwards 0s;
   width:var(--brand-width);
 }
-
+.figma h2 {
+  text-align: center;
+  color:#000;
+  font-family:Poppins;
+  /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+  padding:2rem;
+  display: block;
+}
 .container{
   width:100%;
   height:100vh;
@@ -396,7 +517,7 @@ nav {
   width:var(--brand-width);
 }
 
-.microsoft h1 {
+.microsoft h2 {
   text-align: center;
   color:#fff;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -446,7 +567,7 @@ nav {
   width:var(--brand-width);
 }
 
-.youtube h1 {
+.youtube h2 {
   text-align: center;
   color:#fff;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -505,13 +626,13 @@ nav {
   .react .container{
     animation:var(--container-animation);
   }
-  .react h1 {
-      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  .react h2 {
+      font-family:'Poppins', Arial, sans-serif;
       color:#fff;
       font-weight: 500;
       position: absolute;
       left:50%;
-      top:30%;
+      top:20%;
       transform: translateX(-50%);
   }
 
@@ -586,6 +707,12 @@ nav {
   --animation: shake .5s linear forwards;
   width:var(--brand-width);
   }
+
+.google h2 {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  text-align: center;
+  position: relative;
+}
 .google .container{
 
     background-color: #f4f4f4;
@@ -655,7 +782,7 @@ border-right: 20.0vw solid #f4f4f4;
 
 
   }
-  .mcdonalds h1 {
+  .mcdonalds h2 {
     text-align: center;
     color:var(--logo);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -732,6 +859,11 @@ border-right: 20.0vw solid #f4f4f4;
     width:100%;
   }
    
+.git h2 {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  text-align: center;
+  position: relative;
+}
   .logo-container{
     width:calc(var(--height) * 1.45);
     height:calc(var(--height) * 1.45);
@@ -838,7 +970,7 @@ border-right: 20.0vw solid #f4f4f4;
     --animation: pressure 1.76s linear forwards 2.2s;
     width:100%;
   }
-  .switch h1{
+  .switch h2{
 
     font-family:logofont;
     color:#fff;
@@ -924,8 +1056,10 @@ border-right: 20.0vw solid #f4f4f4;
     --animation: android .2s linear forwards 2.2s;
     width:var(--brand-width);
   }
-  .android h1{
+  .android h2{
     color:var(--logo);
+    text-align: center;
+    font-family:'Poppins',Arial, Helvetica, sans-serif;
   }
   .android .logo{
     overflow:visible;
@@ -1102,17 +1236,17 @@ border-right: 20.0vw solid #f4f4f4;
   animation-iteration-count: 10;
   scale:1;
 }
-.circles h1{
+.circles h2{
   color:var(--logo);
   color:rgb(255, 213, 0);
 }
-.circles h1 {
+.circles h2 {
   color:green;
 }
-.circles h1 span{
+.circles h2 span{
   color:red;
 }
-.circles h1 span:nth-child(2){
+.circles h2 span:nth-child(2){
   color:rgb(255, 213, 0);
 }
 .circle-container{
@@ -1154,7 +1288,7 @@ border-right: 20.0vw solid #f4f4f4;
 
 .adidas{
 
-  --logo: blue;
+  --logo: #000;
   --background:#fff;
   --border-radius:12px;
   --height:250px;
@@ -1168,6 +1302,7 @@ border-right: 20.0vw solid #f4f4f4;
   
 
 }
+
 .adidas .container .logo{
   width:611px;
   position:relative;
@@ -1314,6 +1449,7 @@ h2.adidas{
   position:relative;
   transform:translateX(-1400px);
   animation:colorize .25s linear forwards 2.5s ;
+  z-index:10;
 
 }
 h2.adidas::before{
@@ -1328,6 +1464,19 @@ h2.adidas::before{
   border-bottom-width: 1;
   top:19px;
 }
+header{
+  width:100%;
+  position: relative;
+}
+header h1 {
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+  font-family: Poppins;
+  font-size:1.5rem;
+}
+
+
 /* KEYFRAME ANIMATIONS */
 
   @keyframes rotation{
@@ -1349,7 +1498,7 @@ h2.adidas::before{
   .container div.logo {
     animation: var(--animation);
   }
-  :where(.figma, .microsoft, .youtube, .react, .google, .mcdonalds, .android, .git, .adidas) h1{
+  :where(.figma, .microsoft, .youtube, .react, .google, .mcdonalds, .android, .git) h2{
     opacity:0;
     display:block;
     animation: slide-in-left 0.5s linear forwards 0.2s;

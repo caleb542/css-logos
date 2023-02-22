@@ -1,6 +1,14 @@
+import { useEffect } from 'react'
+import {useLocation} from 'react-router-dom'
+import updatePage from './scripts/updatePage'
 
+function Flowers({pageNumber, setPageNumber}) {
+  const location = useLocation()
+  const loc = location.pathname.substring(1)
+  useEffect(()=>{
 
-function Flowers() {
+    setPageNumber(updatePage(loc))
+  })
   return (
     <div className="circles">
         <div className="container">

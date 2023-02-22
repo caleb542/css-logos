@@ -1,10 +1,42 @@
-function Figma() {
+import { useEffect } from 'react'
+import {useLocation} from 'react-router-dom'
+import pages from './scripts/pages'
+import updatePage from './scripts/updatePage'
+import totalPages from './scripts/totalPages'
+
+function Figma({pageTitle, setPageTitle, pageNumber, setPageNumber, isNextDisabled, setIsNextDisabled, isPrevDisabled, setIsPrevDisabled}) {
+
+  const location = useLocation()
+  const loc = location.pathname.substring(1)
+  
+function checkDisabled() {
+
+  setPageNumber(updatePage(loc))
+
+  if(parseInt(updatePage(loc)) === 1){
+      setIsPrevDisabled(true)
+    }
+  else{
+      setIsPrevDisabled(false)
+  }  
+  if(parseInt(updatePage(loc)) === totalPages()) {
+     setIsNextDisabled(true)
+  }else{
+      setIsNextDisabled(false)
+  }
+
+}
+  useEffect(()=>{
+   setPageTitle("CSS LOGOS - FIGMA") 
+   checkDisabled(loc)
+   
+  })
   return (
-    <div className="figma">
+    <div id="main" className="figma">
         <div className="container">
-            <h1>
+            <h2>
                 Figma
-            </h1>
+            </h2>
             <div className="logo">
                 <div className="cell"></div>
                 <div className="cell"></div>

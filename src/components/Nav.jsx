@@ -12,7 +12,7 @@ function Nav() {
     }
     return (
         <>
-        <button onClick={toggle} className="btn btnNav" >
+        <button onClick={toggle} className="btn btnNav" tabIndex="0" >
         <div className='dots' style={ show ? { 'rotate':'-90deg','transition':'all 0.4s'}:{'rotate':'0deg','transition':'all 0.4s'}}>
             <div style={ show ? { 'width':'2px','transition':'all 0.4s'}:{'width':'24px',}}></div>
             <div style={ show ? { 'width':'2px'}:{'width':'24px'}}></div><div style={ show ? { 'width':'2px'}:{'width':'24px'}}></div>
@@ -26,9 +26,12 @@ function Nav() {
         <li>
        
         </li>
-            <li className="navItem">
+        {/*
+           <li className="navItem">
                 <NavLink to='/' activeclassname="active">Home</NavLink>
             </li>
+    */}
+         
             <li className="navItem">
                 <NavLink to='/figma' activeclassname="active">Figma</NavLink>
             </li>
@@ -59,9 +62,9 @@ function Nav() {
             <li className="navItem">
                 <NavLink activeclassname="active" to='adidas'>Adidas</NavLink>
             </li>
-            <li className="navItem">
+            {/*<li className="navItem">
                 <NavLink activeclassname="active" to='circles'>Flowers</NavLink>
-            </li>
+    </li>*/}
          </ul>
       </nav>
       </>

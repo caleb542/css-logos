@@ -1,10 +1,40 @@
-function adidas() {
+import { useEffect } from 'react'
+import {useLocation} from 'react-router-dom'
+import updatePage from './scripts/updatePage'
+import pages from './scripts/pages'
+import totalPages from './scripts/totalPages'
+
+function Adidas({pageTitle, setPageTitle, pageNumber, setPageNumber, setIsNextDisabled, setIsPrevDisabled}) {
+    const location = useLocation()
+    const loc = location.pathname.substring(1)
+
+    function checkDisabled() {
+
+        setPageNumber(updatePage(loc))
+      
+        if(parseInt(updatePage(loc)) === 1){
+            setIsPrevDisabled(true)
+          }
+        else{
+            setIsPrevDisabled(false)
+        }  
+        if(parseInt(updatePage(loc)) === totalPages()) {
+           setIsNextDisabled(true)
+        }else{
+            setIsNextDisabled(false)
+        }
+      
+      }
+        useEffect(()=>{
+          setPageTitle("CSS LOGOS - ADIDAS")  
+          checkDisabled(loc)
+          setPageNumber(updatePage(loc))
+        })
+
   return (
-    <div className="adidas">
+    <div id="main" className="adidas">
         <div className="container">
-            <h1>
-               
-            </h1>
+            
             <div className="logo">
                 <div className="flower">
                     <div className="petal">
@@ -36,4 +66,4 @@ function adidas() {
   )
 }
 
-export default adidas
+export default Adidas
