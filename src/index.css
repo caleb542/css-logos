@@ -158,11 +158,12 @@ nav a:hover{
   .prev button:hover,
   .next button:focus,
   .prev button:focus{
-    color:#055;
+    color:#ffc000;
   }
   .next button:focus,
   .prev button:focus{
     border-color:#fff;
+    outline:auto;
   }
   .next button:disabled{
     filter:contrast(0.3);
