@@ -232,7 +232,9 @@ nav a:hover{
     color:#fff;
     
   }
-
+  .nextprev {
+    top:90%;
+  }
 
   .pageContainer{
     flex-direction:row;
@@ -713,6 +715,7 @@ nav {
   font-family: 'Poppins', Arial, Helvetica, sans-serif;
   text-align: center;
   position: relative;
+  top:50%;
 }
 .google .container{
 
