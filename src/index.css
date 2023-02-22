@@ -232,9 +232,7 @@ nav a:hover{
     color:#fff;
     
   }
-  .nextprev {
-    top:90%;
-  }
+
 
   .pageContainer{
     flex-direction:row;
@@ -299,6 +297,16 @@ nav a:hover{
     background:none;
     border-radius:0px;
 
+  }
+  .nextprev{
+    display:block;
+    position: absolute;
+    top:unset;
+    bottom:11%;
+    left:0;
+    height:3rem;;
+    width:100%;
+    z-index:10;
   }
 }
 
