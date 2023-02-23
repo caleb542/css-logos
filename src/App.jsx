@@ -38,7 +38,8 @@ function App() {
          
           
           <header>
-            <h1>CSS LOGOS</h1>
+            <h1>
+            <span>CSS</span> <span>LOGOS</span></h1>
             <Nav />
           </header>
 
