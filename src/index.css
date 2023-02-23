@@ -269,24 +269,42 @@ header h1 {
 :where( #microsoft, #youtube, #react ) .dots div, .dots div:first-child,.dots div:last-child {
  background-color: #fff;
 }
-:where( #mcdonalds ) .dots div:first-child,.dots div:last-child {
+:where( #google ) .dots div{
+  background-color: #f1b401;
+}
+:where( #google ) .dots div:first-child{
+  background-color: #eb4132;
+}
+:where( #google ) .dots div:last-child{
+  background-color: #2ba14d;
+}
+:where( #mcdonalds ) .dots div,
+:where( #mcdonalds ) .dots div:first-child,
+:where( #mcdonalds ) .dots div:last-child {
   background-color: #ffc20f;
 }
-:where( #git ) .dots div:first-child,.dots div:last-child{
+:where( #git ) .dots div,
+:where( #git ) .dots div:first-child,
+:where( #git ) .dots div:last-child{
   background-color:#ff4f20;
 }
-:where( #adidas ) .dots div:first-child,.dots div:last-child {
+:where( #adidas ).dots div:first-child,
+:where( #adidas ).dots div:last-child {
   background-color: red;
 }
-:where( #android ) .dots div, .dots div:first-child,.dots div:last-child {
+:where( #android ) .dots div, 
+:where( #android ) .dots div:first-child,
+:where( #android ) .dots div:last-child {
   background-color:#a4c639 !important;
 }
 :where(#switch) .dots div {
   background-color: #4bd1e1;
 }
-:where(#switch) .dots div:first-child,.dots div:last-child {
+:where(#switch) .dots div:first-child,
+:where(#switch) .dots div:last-child {
   background-color:#f00;
 }
+
 
 @media screen and (max-width:1155px){
   :root{
