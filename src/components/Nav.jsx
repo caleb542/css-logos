@@ -11,6 +11,8 @@ function Nav() {
         // alert('clcike')
         setShow(!show)
     }
+
+
     return (
         <>
         <button onClick={toggle} className="btn btnNav" tabIndex="0" >

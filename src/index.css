@@ -211,7 +211,6 @@ header h1 {
   top:.5rem;
   display: inline-block;;
   padding:0 1rem 0.5 1rem;
-  border-bottom:1px dashed #000;
   z-index: 10;
   color:#000;
   transform: translateX(-50%);
@@ -229,6 +228,50 @@ header h1 {
   transition:all 1s;
   background:var(--background);
   background-size:var(--background-size);
+}
+.btnNav{
+  top:20px;
+  right:20px;
+  display:block;
+  position: absolute;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  max-width:40px;
+  max-height:40px;
+  width:60px;
+  height:60px;
+  padding:6px;
+  border-radius: 6px;
+  background-image: linear-gradient(-45deg, #34324b 0%, #161222 90%);
+  background:none;
+  border:0;
+  cursor:pointer;
+
+}
+
+.dots div{
+  background:#000;
+  width:25px;
+  height:2px;
+  transition:all 0.05s;
+  
+}  
+.dots{
+  position: relative;
+  display:flex;
+  padding:0;
+  flex-direction: column;
+  height:30px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+:where( #microsoft, #youtube, #react, #mcdonalds, #switch ) .dots div {
+ text-decoration-color: #fff;
+}
+:where( #android ) .dots div {
+  
+  background-color:#a4c639 !important;
 }
 
 @media screen and (max-width:1155px){
@@ -252,7 +295,7 @@ header h1 {
     padding-bottom:0;
     padding-right:4rem;
     padding-left:4rem;
-    background-color: rgb(0 0 0 / 50%);
+    background-color: rgb(0 0 0 / 80%);
     transition:all ease-in 0.2s;
   }
   nav.show{
@@ -280,22 +323,7 @@ header h1 {
     width:100%;
   }
 
-  .dots{
-    position: relative;
-    display:flex;
-    padding:0;
-    flex-direction: column;
-    height:30px;
-    align-items: center;
-    justify-content: space-evenly;
-  }
-  button.btnNav .dots div{
-    background:#fff;
-    width:25px;
-    height:2px;
-    transition:all 0.05s;
-    
-  }
+
   nav {
     top:0;
     left:0;
@@ -349,22 +377,25 @@ header h1 {
     width:100%;
     z-index:10;
   }
-
+  .btnNav{display:flex;}
   
   :where(#adidas, #figma, #microsoft, #youtube, #react, #google, #mcdonalds, #android, #git) header h1{
     font-weight:600;
     font-size:1.25rem;
     color:#000;
+    border-bottom:1px dashed #000;
     }
     :where( #microsoft, #youtube, #react, #mcdonalds, #switch ) header h1 {
       font-weight:600;
       font-size:1.25rem;
       color:#fff !important;
+      border-bottom:1px solid #fff;
     }
     :where( #android ) header h1 {
       font-weight:600;
       font-size:1.25rem;
       color:#a4c639 !important;
+      border-bottom:1px dashed #a4c639;
     }
   
 }
@@ -385,22 +416,7 @@ header h1 {
   text-shadow: 2px 2px 1px rgb(200 200 255 /50%);
   transition:all 0.5s ease-out;
 }
-.btnNav{
-  top:20px;
-  right:20px;
-  display:block;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width:40px;
-  max-height:40px;
-  width:60px;
-  height:60px;
-  padding:6px;
-  border-radius: 6px;
-  background-image: linear-gradient(-45deg, #34324b 0%, #161222 90%);
-}
+
 
 
 
