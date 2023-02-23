@@ -4,7 +4,7 @@ import pages from './scripts/pages'
 import updatePage from './scripts/updatePage'
 import totalPages from './scripts/totalPages'
 
-function Figma({pageTitle, setPageTitle, pageNumber, setPageNumber, isNextDisabled, setIsNextDisabled, isPrevDisabled, setIsPrevDisabled}) {
+function Figma({setBodyId, pageTitle, setPageTitle, pageNumber, setPageNumber, isNextDisabled, setIsNextDisabled, isPrevDisabled, setIsPrevDisabled}) {
 
   const location = useLocation()
   const loc = location.pathname.substring(1)
@@ -27,6 +27,7 @@ function checkDisabled() {
 
 }
   useEffect(()=>{
+   setBodyId("figma")
    setPageTitle("CSS LOGOS - FIGMA") 
    checkDisabled(loc)
    

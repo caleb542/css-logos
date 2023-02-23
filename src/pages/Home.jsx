@@ -1,11 +1,14 @@
+import { useEffect } from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 
 
-function Home() {
+function Home({ setBodyId }) {
 
-  
   const navigate = useNavigate();
-    return (
+  useEffect(()=>{
+    setBodyId("home")
+  })  
+  return (
       <div className="home">
         <div className="container">
           <div className="gradient">

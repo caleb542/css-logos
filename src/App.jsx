@@ -17,7 +17,8 @@ import Nav from './components/Nav'
 import NextPrev from './components/NextPrev'
 import updatePage from './pages/scripts/updatePage'
 
-function App() {  
+function App() {
+  const [bodyId, setBodyId] = useState("home")
   const [pageTitle, setPageTitle] = useState("CSS Logos")
   const [pageNumber, setPageNumber] = useState(5)
   const [isNextDisabled, setIsNextDisabled] = useState(false)
@@ -31,15 +32,18 @@ function App() {
   return (
     <div className="App">
     
-      <div className="pageContainer">
+      <div id={bodyId} className="pageContainer">
         <Router>
         <Link to="#main" className="tab-only">Skip to content</Link>
-          <Nav />
-          <header style={{position:'relative'}}>
-          <h1>CSS LOGOS</h1>
+         
+          
+          <header>
+            <h1>CSS LOGOS</h1>
+            <Nav />
           </header>
 
           <NextPrev 
+
           pageNumber={pageNumber}
           isPrevDisabled={isPrevDisabled}
           isNextDisabled={isNextDisabled}
@@ -48,7 +52,8 @@ function App() {
           
           <Routes>
           
-          <Route path='/' element={<Figma 
+          <Route path='/' element={<Home
+            setBodyId={setBodyId}
             pageTitle={pageTitle}
             setPageTitle={setPageTitle}
             pageNumber={pageNumber}
@@ -61,6 +66,7 @@ function App() {
         
           
             <Route path='/figma' element={<Figma 
+              setBodyId={setBodyId}
               pageTitle={pageTitle}
               setPageTitle={setPageTitle}
               pageNumber={pageNumber}
@@ -73,6 +79,7 @@ function App() {
 
             </Route>
             <Route path='/microsoft' element={<Microsoft 
+              setBodyId={setBodyId}
               pageTitle={pageTitle}
               setPageTitle={setPageTitle}
               pageNumber={pageNumber}
@@ -85,6 +92,7 @@ function App() {
             </Route>
             
             <Route path='/youtube' element={<Youtube
+              setBodyId={setBodyId}
               pageTitle={pageTitle}
               setPageTitle={setPageTitle} 
               pageNumber={pageNumber}
@@ -97,6 +105,7 @@ function App() {
             </Route>
 
             <Route path='/reactlogo' element={<ReactLogo
+              setBodyId={setBodyId}
               pageTitle={pageTitle}
               setPageTitle={setPageTitle}
               pageNumber={pageNumber}
@@ -108,6 +117,7 @@ function App() {
               />}>
             </Route>
             <Route path='/google' element={<Google
+              setBodyId={setBodyId}
               pageTitle={pageTitle}
               setPageTitle={setPageTitle} 
               pageNumber={pageNumber}
@@ -118,6 +128,7 @@ function App() {
               setIsPrevDisabled={setIsPrevDisabled}  
               />}></Route>
             <Route path='/mcdonalds' element={<Mcdonalds
+              setBodyId={setBodyId}
               pageTitle={pageTitle}
               setPageTitle={setPageTitle} 
               pageNumber={pageNumber}
@@ -128,6 +139,7 @@ function App() {
               setIsPrevDisabled={setIsPrevDisabled}  
               />}></Route>
             <Route path='/git' element={<Git
+              setBodyId={setBodyId}
               pageTitle={pageTitle}
               setPageTitle={setPageTitle} 
               pageNumber={pageNumber}
@@ -138,6 +150,7 @@ function App() {
               setIsPrevDisabled={setIsPrevDisabled}  
               />}></Route>
             <Route path='/switch' element={<Switch
+              setBodyId={setBodyId}
               pageTitle={pageTitle}
               setPageTitle={setPageTitle}
               pageNumber={pageNumber}
@@ -147,7 +160,8 @@ function App() {
               setIsNextDisabled={setIsNextDisabled}
               setIsPrevDisabled={setIsPrevDisabled}  
               />}></Route>
-            <Route path='/android' element={<Android 
+            <Route path='/android' element={<Android
+              setBodyId={setBodyId}
               pageTitle={pageTitle}
               setPageTitle={setPageTitle} 
               pageNumber={pageNumber}
@@ -159,6 +173,7 @@ function App() {
               />}>
               </Route>
             <Route path='/adidas' element={<Adidas
+              setBodyId={setBodyId}
               pageTitle={pageTitle}
               setPageTitle={setPageTitle} 
               pageNumber={pageNumber}
@@ -171,6 +186,7 @@ function App() {
 
 
             <Route path='/circles' element={<Flowers 
+              setBodyId={setBodyId}
               pageTitle={pageTitle}
               setPageTitle={setPageTitle}
               pageNumber={pageNumber}

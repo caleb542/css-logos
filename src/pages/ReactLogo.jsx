@@ -5,7 +5,7 @@ import updatePage from './scripts/updatePage'
 import pages from './scripts/pages'
 import totalPages from './scripts/totalPages'
 
-function ReactLogo({pageTitle, setPageTitle, pageNumber, setPageNumber, setIsNextDisabled, setIsPrevDisabled}) {
+function ReactLogo({setBodyId, pageTitle, setPageTitle, pageNumber, setPageNumber, setIsNextDisabled, setIsPrevDisabled}) {
   const location = useLocation()
   const loc = location.pathname.substring(1)
   function checkDisabled() {
@@ -26,6 +26,7 @@ function ReactLogo({pageTitle, setPageTitle, pageNumber, setPageNumber, setIsNex
   
   }
     useEffect(()=>{
+      setBodyId("react")
       setPageTitle("CSS LOGOS - REACT")
       checkDisabled(loc)
       setPageNumber(updatePage(loc))

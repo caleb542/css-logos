@@ -4,7 +4,7 @@ import updatePage from './scripts/updatePage'
 import pages from './scripts/pages'
 import totalPages from './scripts/totalPages'
 
-function McDonalds({pageTitle, setPageTitle, pageNumber, setPageNumber, setIsNextDisabled, setIsPrevDisabled}) {
+function McDonalds({setBodyId, pageTitle, setPageTitle, pageNumber, setPageNumber, setIsNextDisabled, setIsPrevDisabled}) {
     const location = useLocation()
     const loc = location.pathname.substring(1)
     function checkDisabled() {
@@ -25,6 +25,7 @@ function McDonalds({pageTitle, setPageTitle, pageNumber, setPageNumber, setIsNex
       
       }
         useEffect(()=>{
+            setBodyId("mcdonalds")
           setPageTitle("CSS LOGOS - McDONALDS")
           checkDisabled(loc)
           setPageNumber(updatePage(loc))

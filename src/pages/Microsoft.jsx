@@ -4,7 +4,7 @@ import updatePage from './scripts/updatePage'
 import pages from './scripts/pages'
 import totalPages from './scripts/totalPages'
 
-function Microsoft({ pageTitle, setPageTitle, pageNumber, setPageNumber,setIsPrevDisabled,setIsNextDisabled }) {
+function Microsoft({ setBodyId, pageTitle, setPageTitle, pageNumber, setPageNumber,setIsPrevDisabled,setIsNextDisabled }) {
   const location = useLocation()
   const loc = location.pathname.substring(1)
   
@@ -26,6 +26,7 @@ function checkDisabled() {
 
 }
   useEffect(()=>{
+    setBodyId("microsoft")
     setPageTitle("CSS LOGOS - MICROSOFT")
     checkDisabled(loc)
     setPageNumber(updatePage(loc))

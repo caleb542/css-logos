@@ -4,7 +4,7 @@ import updatePage from './scripts/updatePage'
 import pages from './scripts/pages'
 import totalPages from './scripts/totalPages'
 
-function Adidas({pageTitle, setPageTitle, pageNumber, setPageNumber, setIsNextDisabled, setIsPrevDisabled}) {
+function Adidas({setBodyId, pageTitle, setPageTitle, pageNumber, setPageNumber, setIsNextDisabled, setIsPrevDisabled}) {
     const location = useLocation()
     const loc = location.pathname.substring(1)
 
@@ -26,7 +26,8 @@ function Adidas({pageTitle, setPageTitle, pageNumber, setPageNumber, setIsNextDi
       
       }
         useEffect(()=>{
-          setPageTitle("CSS LOGOS - ADIDAS")  
+          setPageTitle("CSS LOGOS - ADIDAS")
+          setBodyId("adidas")
           checkDisabled(loc)
           setPageNumber(updatePage(loc))
         })

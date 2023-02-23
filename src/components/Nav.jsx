@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import {NavLink} from 'react-router-dom'
+import { GrHomeRounded } from 'react-icons/gr'
 
 function Nav() {
     
-    const [show, setShow ] = useState(true)
+    const [show, setShow ] = useState(false)
     
     const toggle = (e) => {
         e.preventDefault()
@@ -23,14 +24,11 @@ function Nav() {
       <nav id="Nav" className={show ?'show':'hide'}>
         
         <ul>
-        <li>
        
-        </li>
-        {/*
            <li className="navItem">
-                <NavLink to='/' activeclassname="active">Home</NavLink>
+                <NavLink to='/' activeclassname="active"><GrHomeRounded/></NavLink>
             </li>
-    */}
+
          
             <li className="navItem">
                 <NavLink to='/figma' activeclassname="active">Figma</NavLink>

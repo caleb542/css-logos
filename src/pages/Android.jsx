@@ -4,7 +4,7 @@ import updatePage from './scripts/updatePage'
 import pages from './scripts/pages'
 import totalPages from './scripts/totalPages'
 
-function Android({pageTitle, setPageTitle, pageNumber, setPageNumber, setIsNextDisabled, setIsPrevDisabled}) {
+function Android({setBodyId, pageTitle, setPageTitle, pageNumber, setPageNumber, setIsNextDisabled, setIsPrevDisabled}) {
   const location = useLocation()
   const loc = location.pathname.substring(1)
   function checkDisabled() {
@@ -25,6 +25,7 @@ function Android({pageTitle, setPageTitle, pageNumber, setPageNumber, setIsNextD
   
   }
     useEffect(()=>{
+      setBodyId("android")
       setPageTitle("CSS LOGO - ANDROID")
       checkDisabled(loc)
       setPageNumber(updatePage(loc))

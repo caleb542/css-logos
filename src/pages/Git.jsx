@@ -4,7 +4,7 @@ import updatePage from './scripts/updatePage'
 import pages from './scripts/pages'
 import totalPages from './scripts/totalPages'
 
-function Git({pageTitle, setPageTitle, pageNumber, setPageNumber, setIsNextDisabled, setIsPrevDisabled}) {
+function Git({setBodyId, pageTitle, setPageTitle, pageNumber, setPageNumber, setIsNextDisabled, setIsPrevDisabled}) {
 const location = useLocation()
   const loc = location.pathname.substring(1)
   function checkDisabled() {
@@ -25,6 +25,7 @@ const location = useLocation()
   
   }
     useEffect(()=>{
+      setBodyId("git")
       setPageTitle("CSS LOGOS - GIT")
       checkDisabled(loc)
       setPageNumber(updatePage(loc))
