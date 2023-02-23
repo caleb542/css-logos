@@ -269,6 +269,15 @@ header h1 {
 :where( #microsoft, #youtube, #react ) .dots div, .dots div:first-child,.dots div:last-child {
  background-color: #fff;
 }
+:where( #figma ) .dots div{
+  background-color: #9f61fa;
+}
+:where( #figma ) .dots div:first-child{
+  background-color: #f00;
+}
+:where( #figma ) .dots div:last-child {
+  background-color: #00ce84;
+}
 :where( #google ) .dots div{
   background-color: #f1b401;
 }
