@@ -1645,16 +1645,10 @@ h2.adidas::before{
   }
 
 
-
-
-/* 
-  .container *{
-    animation:opacity 0.4s ease-in-out forwards;
-  } */
   .container div.logo {
     animation: var(--animation);
   }
-  :where(.figma, .microsoft, .youtube, .react, .google, .mcdonalds, .android, .git) h2{
+  :where(.android) h2{
     opacity:0;
     display:block;
     animation: slide-in-left 0.5s linear forwards 0.2s;
